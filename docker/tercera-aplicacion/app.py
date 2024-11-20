@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 import boto3
 
 app = Flask(__name__)
