@@ -2,7 +2,7 @@ from flask import Flask, request
 import boto3
 
 app = Flask(__name__)
-dynamodb = boto3.resouce('dynamodb', region_name='us-east-1')
+dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 tabla = dynamodb.Table('tabla-alexanderagudelo')
 
 
