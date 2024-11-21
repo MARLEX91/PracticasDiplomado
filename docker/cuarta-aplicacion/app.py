@@ -5,6 +5,7 @@ import os
 
 app = Flask(__name__)
 
+
 @app.route('/voice', methods=['POST'])
 def voice():
   try:
@@ -12,17 +13,15 @@ def voice():
     text = data.get('text')
     voice = 'Mia'
     output_format = 'mp3'
-    
+
     if not text:
-      return jsonify({'error':'No se recibió el texto'}), 400
+      return jsonify({'error': 'No se recibió el texto'}), 400
 
-    polly = boto3.client('polly',  region_name='us-east-1')
+    polly = boto3.client('polly', region_name='us-east-1')
 
-    response = polly.synth_speech(
-      Text=text,
-      OutputFormat=output_format,
-      VoiceId=voice
-    )
+    response = polly.synth_speech(Text=text,
+                                  OutputFormat=output_format,
+                                  VoiceId=voice)
     audiofile = 'output.mp3'
     with open(audiofile, 'wb') as file:
       file.write(response['AudioStream'].read())
@@ -31,4 +30,7 @@ def voice():
 
   except Exception as e:
     return jsonify({'error': str(e)}), 500
-  
+
+
+if __name__ == '__main__':
+  app.run(debug=True, host='0.0.0.0', port=5000)
