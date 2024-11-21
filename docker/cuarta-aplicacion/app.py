@@ -19,9 +19,9 @@ def voice():
 
     polly = boto3.client('polly', region_name='us-east-1')
 
-    response = polly.synth_speech(Text=text,
-                                  OutputFormat=output_format,
-                                  VoiceId=voice)
+    response = polly.synthesize_speech(Text=text,
+                                       OutputFormat=output_format,
+                                       VoiceId=voice)
     audiofile = 'output.mp3'
     with open(audiofile, 'wb') as file:
       file.write(response['AudioStream'].read())
