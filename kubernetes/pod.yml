@@ -4,7 +4,7 @@ metadata:
   name: pod-image-1070960482
 spec:
   containers:
-  - name: nginx
+  - name: imagen
     image: 047719650114.dkr.ecr.us-east-1.amazonaws.com/a1070960482:latest
     ports:
     - containerPort: 5000
