@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-1070960482
+spec:
+  type: NodePort
+  selector:
+    app: alex-1070960482
+  ports:
+    # Por defecto y por comodidad, el `TargetPort` tiene el mismo valor que el campo `port.
+    - port: 80
+      targetPort: 5000
+    
