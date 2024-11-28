@@ -7,6 +7,6 @@ spec:
     app: alex-1070960482
   ports:
     - protocol: TCP
-      port: 5000
-      targetPort: 9376
+      port: 80
+      targetPort: 5000
   type: ClusterIP
