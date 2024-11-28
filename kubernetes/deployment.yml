@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: 1070960482-deployment
   labels:
-    app: 1070960482
+    app: alex-1070960482
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: 1070960482
+      app: alex-1070960482
   template:
     metadata:
       labels:
-        app: 1070960482
+        app: alex-1070960482
     spec:
       containers:
       - name: contenedor-1070960482

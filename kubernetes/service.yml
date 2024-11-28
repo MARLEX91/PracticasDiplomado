@@ -4,7 +4,7 @@ metadata:
   name: 1070960482-service
 spec:
   selector:
-    app: 1070960482
+    app: alex-1070960482
   ports:
     - protocol: TCP
       port: 5000
